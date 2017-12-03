@@ -1,0 +1,177 @@
+//
+// Licensed to Apereo under one or more contributor license
+// agreements. See the NOTICE file distributed with this work
+// for additional information regarding copyright ownership.
+// Apereo licenses this file to you under the Apache License,
+// Version 2.0 (the "License"); you may not use this file
+// except in compliance with the License.  You may obtain a
+// copy of the License at the following location:
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing,
+// software distributed under the License is distributed on an
+// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+// KIND, either express or implied.  See the License for the
+// specific language governing permissions and limitations
+// under the License.
+//
+
+/**
+ * Licensed to Jasig under one or more contributor license
+ * agreements. See the NOTICE file distributed with this work
+ * for additional information regarding copyright ownership.
+ * Jasig licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a
+ * copy of the License at:
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+//@import "_variables.less";
+
+.announcements-container {
+    a {
+        color: #0074b7;
+    }
+
+    .announcements-portlet-toolbar {
+        border-bottom: 1px solid @color1-light;
+        margin: 0 0 10px 0;
+        height: 100%;
+        .nav-links {
+            height: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+    }
+
+    .announcements-table {
+        thead {
+            text-align: center;
+            background-color: @color1-lighter;
+        }
+        .action-icon-table {
+            width: 100%;
+            .action-icon {
+                padding: 6px;
+            }
+        }
+    }
+
+    .approval-count {
+        background-color: @color1;
+        border: @color1-darker 1px solid;
+        color: @white;
+        padding: 0 4px;
+    }
+
+    form {
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+        }
+        .announcements-error {
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+            padding: .5em .8em;
+            font-size: 85%;
+        }
+        .mceLayout {
+            border: 1px solid #ccc !important;
+        }
+        .attachments-container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        // Match bootstrap's form-controls style for textarea
+        div .mceEditor {
+          border: 1px solid #ccc;
+          padding: 6px 12px;
+        }
+        legend {
+            font-size: 14px;
+            border: none;
+            font-weight: bold;
+        }
+    }
+
+    .ann-display-item-summary, .ann-display-item-full {
+        margin-bottom: 10px;
+        .ann-item-header {
+            font-weight: bold;
+            height: 100%;
+            display: block;
+            .ann-item-topic {
+                float: left;
+            }
+            .ann-item-date {
+                text-align: right;
+            }
+        }
+        h1 {
+            font-size: 135%;
+            margin-top: 6px;
+            margin-bottom: 3px;
+            border-bottom: none;
+        }
+    }
+
+    .ann-display-item-summary {
+        border-bottom: 1px solid #eee;
+    }
+
+    .announcement-list-nav {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-primary{
+        background-color: #0074b7;
+    }
+
+    .btn-link{
+        color: #0074b7
+    }
+
+    .label-danger{
+        background-color: #852500;
+    }
+
+    .permissions-group-padding {
+        padding: 3px;
+    }
+
+    .permissions-group-container {
+        width: 25%;
+        padding: 5px;
+        border: 1px solid #eee;
+    }
+
+    .announcements-scrolling {
+        overflow: auto;
+
+        .row {
+            margin: 0;
+        }
+    }
+
+    .ann-user-archive-table {
+        height: 400px;
+        overflow-y: auto;
+    }
+
+    .no-col-padding {
+        padding: 0;
+    }
+}
+

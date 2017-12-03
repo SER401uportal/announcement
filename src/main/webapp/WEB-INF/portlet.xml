@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to Apereo under one or more contributor license
+    agreements. See the NOTICE file distributed with this work
+    for additional information regarding copyright ownership.
+    Apereo licenses this file to you under the Apache License,
+    Version 2.0 (the "License"); you may not use this file
+    except in compliance with the License.  You may obtain a
+    copy of the License at the following location:
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+ version="2.0">
+
+    <!-- IMPORTANT: For this portlet to work, you must mirror all <security-role-ref> elements in both portlet sections!! -->
+
+    <portlet>
+        <portlet-name>AnnouncementsDisplay</portlet-name>
+        <display-name xml:lang="en">Announcements</display-name>
+        <display-name xml:lang="sv">Tillk&#228;nnagivanden</display-name>
+        <display-name xml:lang="fr">Annonces</display-name>
+
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>classpath:/context/portlet/announcementsDisplay.xml</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+            <portlet-mode>edit</portlet-mode>
+            <portlet-mode>config</portlet-mode>
+        </supports>
+
+        <supported-locale>en</supported-locale>
+        <supported-locale>sv</supported-locale>
+        <supported-locale>fr</supported-locale>
+
+        <resource-bundle>i18n/ann-portlet</resource-bundle>
+
+        <portlet-preferences>
+            <preference>
+                <name>AnnouncementsViewController.displayPublishDate</name>
+                <value>false</value>
+                <read-only>false</read-only>
+            </preference>
+            <!-- Allows the admin to disable user preferences settings like
+                 subscribed topics and display options. -->
+            <preference>
+                <name>AnnouncementsViewController.PREFERENCE_DISABLE_EDIT</name>
+                <value>false</value>
+                <read-only>true</read-only>
+            </preference>
+            <!-- Allows the admin to set the number of items that appear in a
+                 page in the display portlet;  has no effect if
+                 AnnouncementsViewController.useScrollingDisplay=true. -->
+            <preference>
+                <name>AnnouncementsViewController.PAGE_SIZE</name>
+                <value>5</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <!--
+                    Available Strategies:
+                    CREATE_DATE_ASCENDING
+                    CREATE_DATE_DESCENDING
+                    START_DISPLAY_DATE_ASCENDING
+                    START_DISPLAY_DATE_DESCENDING
+                    END_DISPLAY_DATE_ASCENDING
+                    END_DISPLAY_DATE_DESCENDING
+                 -->
+                <name>AnnouncementsViewController.AnnouncementSortStrategy</name>
+                <value>START_DISPLAY_DATE_DESCENDING</value>
+                <read-only>false</read-only>
+            </preference>
+            <preference>
+                <name>AnnouncementsViewController.useScrollingDisplay</name>
+                <value>false</value>
+                <read-only>false</read-only>
+            </preference>
+            <!-- Allows the admin to specify the height of the announcements
+                 list (non-emergency) in pixels;  has no effect if
+                 AnnouncementsViewController.useScrollingDisplay=false. -->
+            <preference>
+                <name>AnnouncementsViewController.scrollingDisplayHeightPixels</name>
+                <value>500</value>
+                <read-only>false</read-only>
+            </preference>
+            <!-- Hides the abstract on the list view. -->
+            <preference>
+                <name>AnnouncementsViewController.hideAbstract</name>
+                <value>false</value>
+                <read-only>false</read-only>
+            </preference>
+            <!-- Listed topics (by title) will be broadcast as notifications for
+                 display in the Apereo NotificationPortlet.  The NotificationPortlet
+                 infrastructure underpins both Notification and EmergencyAlert portlets.  -->
+            <preference>
+                <name>AnnouncementsViewController.syndicateTopicsAsNotifications</name>
+                <value>EMERGENCY</value>
+                <read-only>false</read-only>
+            </preference>
+            <!-- Indicates the FName (unique identifier) for the published
+                 AnnouncementsDisplay portlet that will show the full content
+                 (via hyperlink) of announcements that are syndicated as notifications.  -->
+            <preference>
+                <name>AnnouncementsViewController.syndicateTopicsAnnouncementsDisplayFName</name>
+                <value>announcements</value>
+                <read-only>false</read-only>
+            </preference>
+
+            <!--
+              - Indicates whether the portlet should link & use its own copy of the jQuery
+              - library.  Must be 'false' for uPortal 3.0, but must be true for 3.1 or higher
+              - or for any portal that does not use jQuery.
+             -->
+            <preference>
+                <name>includeJQuery</name>
+                <value>true</value>
+                <read-only>false</read-only>
+            </preference>
+        </portlet-preferences>
+
+        <!-- Do not change the role-name of this role, doing so may lock you out of your topics -->
+        <security-role-ref>
+            <role-name>Portal_Administrators</role-name>
+            <role-link>Portal Administrators</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Everyone</role-name>
+            <role-link>Everyone</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>All_Logged_In_Users</role-name>
+            <role-link>Authenticated Users</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Faculty</role-name>
+            <role-link>Faculty</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Staff</role-name>
+            <role-link>Staff</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Students</role-name>
+            <role-link>Students</role-link>
+        </security-role-ref>
+
+        <supported-processing-event>
+            <qname xmlns:x="https://source.jasig.org/schemas/portlet/notification">x:NotificationQuery</qname>
+        </supported-processing-event>
+        <supported-publishing-event>
+            <qname xmlns:x="https://source.jasig.org/schemas/portlet/notification">x:NotificationResult</qname>
+        </supported-publishing-event>
+    </portlet>
+
+    <portlet>
+        <portlet-name>AnnouncementsAdmin</portlet-name>
+        <display-name xml:lang="en">Announcement Administration</display-name>
+        <display-name xml:lang="sv">Administrera Tillk&#228;nnagivanden</display-name>
+        <display-name xml:lang="fr">Administration Annonces</display-name>
+
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>classpath:/context/portlet/announcementsAdmin.xml</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+            <portlet-mode>help</portlet-mode>
+        </supports>
+
+        <supported-locale>en</supported-locale>
+        <supported-locale>sv</supported-locale>
+        <supported-locale>fr</supported-locale>
+
+        <resource-bundle>i18n/ann-admin-portlet</resource-bundle>
+
+        <portlet-preferences>
+            <preference>
+                <name>AdminAnnouncementController.useAttachments</name>
+                <value>true</value>
+                <read-only>false</read-only>
+            </preference>
+            <preference>
+                <name>AdminAnnouncementController.allowOpenEndDate</name>
+                <value>false</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <name>AdminAnnouncementController.allowEmptyMessage</name>
+                <value>false</value>
+                <read-only>true</read-only>
+            </preference>
+            <preference>
+                <!--
+                    Available Strategies:
+                    CREATE_DATE_ASCENDING
+                    CREATE_DATE_DESCENDING
+                    START_DISPLAY_DATE_ASCENDING
+                    START_DISPLAY_DATE_DESCENDING
+                    END_DISPLAY_DATE_ASCENDING
+                    END_DISPLAY_DATE_DESCENDING
+                 -->
+                <name>AdminTopicController.AnnouncementSortStrategy</name>
+                <value>START_DISPLAY_DATE_DESCENDING</value>
+                <read-only>false</read-only>
+            </preference>
+            <preference>
+                <name>AdminAnnouncementController.abstractTextMaxLength</name>
+                <value>255</value>
+                <read-only>false</read-only>
+            </preference>
+            <preference>
+                <name>AdminAnnouncementController.tinyMceInitializationOptions</name>
+                <value>
+                    selector: ".announcements-container div.mceEditor",
+                    height : 300,
+                    plugins: ["advlist autolink lists link image charmap print preview anchor searchreplace visualblocks visualchars code fullscreen insertdatetime media table contextmenu paste visualchars textcolor colorpicker"],
+                    toolbar1: "insertfile undo redo | styleselect fontselect fontsizeselect | link image",
+                    toolbar2: "bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
+                    extended_valid_elements:"a[name|href|target|title|onclick],span[class|align|style]",
+                    toolbar_items_size: 'small',
+                    invalid_elements: "script"
+                </value>
+                <read-only>false</read-only>
+            </preference>
+            <!--
+              - Indicates whether the portlet should link & use its own copy of the jQuery
+              - library.  Must be 'false' for uPortal 3.0, but must be true for 3.1 or higher
+              - or for any portal that does not use jQuery.
+             -->
+            <preference>
+                <name>includeJQuery</name>
+                <value>true</value>
+                <read-only>false</read-only>
+            </preference>
+        </portlet-preferences>
+
+        <!-- Do not change the role-name of this role, doing so may lock you out of your topics -->
+        <security-role-ref>
+            <role-name>Portal_Administrators</role-name>
+            <role-link>Portal Administrators</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Everyone</role-name>
+            <role-link>Everyone</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>All_Logged_In_Users</role-name>
+            <role-link>Authenticated Users</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Faculty</role-name>
+            <role-link>Faculty</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Staff</role-name>
+            <role-link>Staff</role-link>
+        </security-role-ref>
+
+        <security-role-ref>
+            <role-name>Students</role-name>
+            <role-link>Students</role-link>
+        </security-role-ref>
+
+    </portlet>
+
+    <event-definition>
+        <qname xmlns:x="https://source.jasig.org/schemas/portlet/notification">x:NotificationQuery</qname>
+        <value-type>org.jasig.portlet.notice.NotificationQuery</value-type>
+    </event-definition>
+    <event-definition>
+        <qname xmlns:x="https://source.jasig.org/schemas/portlet/notification">x:NotificationResult</qname>
+        <value-type>org.jasig.portlet.notice.NotificationResult</value-type>
+    </event-definition>
+
+</portlet-app>
