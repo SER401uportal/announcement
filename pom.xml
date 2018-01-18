@@ -58,6 +58,7 @@
     </organization>
 
     <developers>
+    <!-- TODO::  -->
         <developer>
             <id>eolsson</id>
             <name>Erik A. Olsson</name>
@@ -67,6 +68,7 @@
     </developers>
 
     <scm>
+    <!-- TODO::  -->
         <connection>scm:git:git://github.com/Jasig/AnnouncementsPortlet.git</connection>
         <developerConnection>scm:git:git@github.com:Jasig/AnnouncementsPortlet.git</developerConnection>
         <url>https://github.com/Jasig/AnnouncementsPortlet</url>
@@ -75,9 +77,9 @@
 
     <repositories>
         <repository>
+        <!-- TODO::  -->
             <id>jasig-repository</id>
             <name>JA-SIG Maven2 Repository</name>
-            <!-- TODO::  -->
             <url>http://developer.ja-sig.org/maven2</url>
         </repository>
         <repository>
@@ -129,6 +131,7 @@
         </dependency>
 
         <dependency>
+            <!-- TODO::  -->
             <groupId>org.jasig.portlet.notification</groupId>
             <artifactId>notification-portlet-api</artifactId>
             <version>2.0.0</version>
@@ -428,7 +431,6 @@
             <plugin>
             <!-- TODO::  -->
                 <artifactId>maven-compiler-plugin</artifactId>
-
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
