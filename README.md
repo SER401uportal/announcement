@@ -24,11 +24,11 @@ These dependencies are expected to be loaded by overall uPortal:
 
 ## Team
 
-Ruan Botha
-Justin Danweber
-Hannah Do
-Craig Smith
-David Worrell
+*   Ruan Botha
+*   Justin Danweber
+*   Hannah Do
+*   Craig Smith
+*   David Worrell
 
 [Portlet]: https://wiki.jasig.org/display/PLT/Jasig+Sponsored+Portlets
 [Soffit]: https://github.com/uPortal-Project/soffit-samples
