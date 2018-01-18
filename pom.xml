@@ -19,6 +19,7 @@
     under the License.
 
 -->
+<!-- TODO::  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
@@ -57,6 +58,7 @@
     </organization>
 
     <developers>
+    <!-- TODO::  -->
         <developer>
             <id>eolsson</id>
             <name>Erik A. Olsson</name>
@@ -66,6 +68,7 @@
     </developers>
 
     <scm>
+    <!-- TODO::  -->
         <connection>scm:git:git://github.com/Jasig/AnnouncementsPortlet.git</connection>
         <developerConnection>scm:git:git@github.com:Jasig/AnnouncementsPortlet.git</developerConnection>
         <url>https://github.com/Jasig/AnnouncementsPortlet</url>
@@ -74,6 +77,7 @@
 
     <repositories>
         <repository>
+        <!-- TODO::  -->
             <id>jasig-repository</id>
             <name>JA-SIG Maven2 Repository</name>
             <url>http://developer.ja-sig.org/maven2</url>
@@ -127,6 +131,7 @@
         </dependency>
 
         <dependency>
+            <!-- TODO::  -->
             <groupId>org.jasig.portlet.notification</groupId>
             <artifactId>notification-portlet-api</artifactId>
             <version>2.0.0</version>
@@ -383,6 +388,7 @@
         <plugins>
             <plugin>
                 <groupId>com.mycila</groupId>
+                <!-- TODO::  -->
                 <artifactId>license-maven-plugin</artifactId>
                 <configuration>
                     <basedir>${basedir}</basedir>
@@ -409,6 +415,7 @@
             </plugin>
 
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.4.2</version>
@@ -422,8 +429,8 @@
             </plugin>
 
             <plugin>
+            <!-- TODO::  -->
                 <artifactId>maven-compiler-plugin</artifactId>
-
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -431,6 +438,7 @@
             </plugin>
 
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
 
@@ -454,6 +462,7 @@
             </plugin>
 
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.15</version>
@@ -463,6 +472,7 @@
             </plugin>
             <!-- Plug-in to add lifecycles to support db-init, data-import, and data-export -->
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.jasig.portal.maven</groupId>
                 <artifactId>uportal-maven-plugin</artifactId>
                 <version>1.0.0</version>
@@ -475,6 +485,7 @@
              |   >mvn db-init
              +-->
             <plugin>
+            <!-- TODO::  -->
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
@@ -515,6 +526,7 @@
             </plugin>
             <!-- To import the announcement db tables, use mvn [-Ddir=dir] data-import -->
             <plugin>
+            <!-- TODO::  -->
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
@@ -684,6 +696,7 @@
                 </executions>
             </plugin>
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.9</version>
@@ -704,6 +717,7 @@
     <reporting>
         <plugins>
             <plugin>
+            <!-- TODO::  -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>

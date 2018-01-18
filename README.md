@@ -1,9 +1,6 @@
-# Apereo Announcements Portlet
+# Announcement Portlet to Soffit Conversion
 
-[![Linux Build Status](https://travis-ci.org/Jasig/AnnouncementsPortlet.svg?branch=master)](https://travis-ci.org/Jasig/AnnouncementsPortlet)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/ckh2tqajlcxhepnr/branch/master?svg=true)](https://ci.appveyor.com/project/ChristianMurphy/announcementsportlet-wj0cf/branch/master)
-
-This is a [Sponsored Portlet][] in the uPortal project.
+This project is to convert the existing Announcement [Portlet][] by Erik Olsson to the new [Soffit][] set up. 
 
 ## Configuration
 
@@ -25,7 +22,16 @@ These dependencies are expected to be loaded by overall uPortal:
 
 *   [Font Awesome][] 4, last tested with [Font Awesome 4.7.0][]
 
-[Sponsored Portlet]: https://wiki.jasig.org/display/PLT/Jasig+Sponsored+Portlets
+## Team
+
+Ruan Botha
+Justin Danweber
+Hannah Do
+Craig Smith
+David Worrell
+
+[Portlet]: https://wiki.jasig.org/display/PLT/Jasig+Sponsored+Portlets
+[Soffit]: https://github.com/uPortal-Project/soffit-samples
 [AnnouncementsPortlet wiki on Confluence]: https://wiki.jasig.org/display/PLT/Announcements+Portlet
 [Font Awesome]: http://fontawesome.io/
 [Jasypt CLI Tools]: http://www.jasypt.org/cli.html

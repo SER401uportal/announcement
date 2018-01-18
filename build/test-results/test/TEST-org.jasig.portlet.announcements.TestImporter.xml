@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.jasig.portlet.announcements.TestImporter" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-07T05:24:38" hostname="MSI" time="0.562">
+  <properties/>
+  <testcase name="testImporter" classname="org.jasig.portlet.announcements.TestImporter" time="0.562"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
