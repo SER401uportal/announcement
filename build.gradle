@@ -4,7 +4,9 @@ apply plugin: 'maven'
 group = 'org.jasig.portlet'
 version = '2.3.2-SNAPSHOT'
 
-description = "Announcements Portlet with Gradle"
+description = "Announcements Portlet with Gradle.  Originally done by 
+			  Erik Olsson, updated by ASU Capstone Team: David Worrel, 
+			  Ruan Botha, Justin Danweber, Craig Smith, Hannah Do"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
